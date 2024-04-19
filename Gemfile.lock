@@ -290,7 +290,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  aasm
+  aasm (~> 5.5)
   bootsnap
   debug
   importmap-rails

@@ -2,11 +2,10 @@
   <% board.map.with_index do |cell,idx| %>
     <% cell_class = "cell" %>
     <% cell_class += " empty" unless cell.present? %>
-    <% cell_class += " winner" if win_combination.include?(idx) %>
 
     <div id="<%= "cell-#{idx}" %>" class="<%= cell_class %>">
       <% if cell.present? %>
-        <%= render partial: "cell", locals: { cell: } %>
+        <%= render partial: "cell", locals: { cell:, highlight: win_combination.include?(idx) } %>
       <% else %>
         <%= render partial: "empty_cell", locals: { next_symbol: next_symbol, game: game, idx: } %>
       <% end %>

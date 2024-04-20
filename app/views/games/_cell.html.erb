@@ -1,3 +1,8 @@
-<span class="symbol">
+<% cell_class = "symbol" %>
+<% cell_class += " o-symbol" if cell == Move::O_SYMBOL %>
+<% cell_class += " x-symbol" if cell == Move::X_SYMBOL %>
+<% cell_class += " highlight" if highlight %>
+
+<span class="<%= cell_class %>">
   <%= cell %>
 </span>

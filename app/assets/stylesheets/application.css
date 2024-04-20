@@ -42,7 +42,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: lightgrey;
-  color: darkred;
 }
 
 .symbol {
@@ -50,7 +49,16 @@ body {
   font-family: fantasy;
 }
 
-.cell.winner {
+.symbol.o-symbol {
+  color: darkred;
+}
+
+.symbol.x-symbol {
+  color: darkcyan;
+}
+
+.symbol.o-symbol.highlight,
+.symbol.x-symbol.highlight {
   color: red;
 }
 

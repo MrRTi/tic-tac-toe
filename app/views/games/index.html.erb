@@ -3,17 +3,4 @@
   <%= button_to "Start new game", action: "create" %>
 </div>
 <br />
-<div>
-  <% if @games.present? %>
-    <h2>Previous games</div>
-    <ui>
-      <% @games.map do |game| %>
-        <li>
-          <%= link_to "Game ##{game.id}", game_path(game) %>
-          <%= game.state %>
-        </li>
-      <% end %>
-    </ui>
-  <% end %>
-</div>
-
+<%= render partial: "games", locals: { games: @games } %>

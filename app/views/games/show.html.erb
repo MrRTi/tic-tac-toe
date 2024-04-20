@@ -1,0 +1,17 @@
+<h1>Game #<%= @game.id%></h1>
+<%= link_to "Back", root_path %>
+
+<div class="content">
+  <div class="board" >
+    <% @board.map.with_index do |cell,idx| %>
+      <% cell_class = cell == @winner_symbol ? "cell winner" : "cell" %>
+      <div id="<%= "cell-#{idx}" %>" class="<%= cell_class %>">
+        <% if cell.present? %>
+          <%= render partial: "cell", locals: { cell: } %>
+        <% else %>
+          <%= render partial: "empty_cell", locals: { next_symbol: @next_symbol, game: @game, idx: } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

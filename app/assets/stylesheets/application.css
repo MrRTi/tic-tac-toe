@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 20em;
+}
+
+.cell {
+  flex: 1 0 30%;
+  height: 6em;
+  margin: 5px;
+  background-color: lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.symbol {
+  font-size: 70px;
+  font-family: fantasy;
+}
+
+.cell.winner {
+  color: red;
+}

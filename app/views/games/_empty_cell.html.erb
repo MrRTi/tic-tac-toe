@@ -1,0 +1,6 @@
+<%= button_to next_symbol,
+  game_moves_path(game),
+  method: :post,
+  disabled: game.finished?,
+  params: { symbol: next_symbol, row: idx/3 + 1, column: idx%3 + 1 }
+%>

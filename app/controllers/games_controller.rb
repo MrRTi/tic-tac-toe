@@ -5,11 +5,12 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    moves = @game.moves
+    @board = BoardService.new(moves, max_rows: @game.max_rows, max_columns: @game.max_columns).call
 
-    @board = BoardService.new(@game).call
-    @last_move = @game.moves.last
-    @next_symbol = @last_move&.symbol == Move::O_SYMBOL ? Move::X_SYMBOL : Move::O_SYMBOL
-    @winner_symbol = @game.finished? && @last_move.symbol
+    last_move_symbol = moves.last&.symbol
+    @next_symbol = last_move_symbol == Move::O_SYMBOL ? Move::X_SYMBOL : Move::O_SYMBOL
+    @winner_symbol = @game.finished? && last_move_symbol
   end
 
   def create

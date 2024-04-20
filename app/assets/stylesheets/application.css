@@ -52,3 +52,7 @@ body {
 .cell.winner {
   color: red;
 }
+
+button:disabled {
+  display: none
+}

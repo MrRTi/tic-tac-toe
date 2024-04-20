@@ -2,7 +2,7 @@
   <% board.map.with_index do |cell,idx| %>
     <% cell_class = "cell" %>
     <% cell_class += " empty" unless cell.present? %>
-    <% cell_class += " winner" if cell == winner_symbol %>
+    <% cell_class += " winner" if win_combination.include?(idx) %>
 
     <div id="<%= "cell-#{idx}" %>" class="<%= cell_class %>">
       <% if cell.present? %>

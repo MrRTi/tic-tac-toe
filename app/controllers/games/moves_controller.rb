@@ -3,12 +3,10 @@ module Games
     def create
       game.moves.create!(**move_params)
 
-      if game_finished?(game)
+      if win?(game)
         game.finish!
-        # TODO: Add victory screen, need to pass win combination
       elsif game_draw?(game)
         game.draw!
-        # TODO: Add draw screen
       end
 
       redirect_to game_path(game)
@@ -24,7 +22,7 @@ module Games
       params.permit(:row, :column, :symbol)
     end
 
-    def game_finished?(game)
+    def win?(game)
       moves = game.moves
       board_params = { max_rows: game.max_rows, max_columns: game.max_columns }
       board = BoardService.new(moves, **board_params).call

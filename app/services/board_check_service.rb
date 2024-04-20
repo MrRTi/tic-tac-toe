@@ -6,9 +6,13 @@ class BoardCheckService
   end
 
   def win?(current_symbol)
-    return false if board.blank?
+    win_combination(current_symbol).present?
+  end
 
-    win_combinations.any? do |indexes|
+  def win_combination(current_symbol)
+    return if board.blank?
+
+    win_combinations.detect do |indexes|
       indexes.all? { |index| board[index] == current_symbol }
     end
   end

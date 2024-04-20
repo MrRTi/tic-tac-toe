@@ -1,7 +1,7 @@
 module Games
   class MovesController < Games::ApplicationController
     def create
-      @move = Move.create!(game:, **move_params)
+      game.moves.create!(**move_params)
 
       if game_finished?(game)
         game.finish!

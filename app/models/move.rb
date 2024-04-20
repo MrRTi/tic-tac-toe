@@ -1,6 +1,6 @@
 class Move < ApplicationRecord
-  X_SYMBOL = :x
-  O_SYMBOL = :o
+  X_SYMBOL = "x".freeze
+  O_SYMBOL = "o".freeze
 
   belongs_to :game
 

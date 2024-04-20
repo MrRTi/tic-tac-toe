@@ -8,7 +8,7 @@ class BoardService
   def call
     board = Array.new(max_rows * max_columns, nil)
     moves.each do |move|
-      index = ((move.row - 1) * max_columns) + move.column - 1
+      index = (move.row * max_columns) + move.column
       board[index] = move.symbol
     end
 

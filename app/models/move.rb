@@ -6,7 +6,7 @@ class Move < ApplicationRecord
 
   validates :row, :column, :symbol, presence: true
 
-  validates :row, :column, numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 3 }
+  validates :row, :column, numericality: { only_integer: true, greater_than_or_equal: 0, less_than: 3 }
   validates :row, uniqueness: { scope: [:game_id, :column] }
   validates :column, uniqueness: { scope: [:game_id, :row] }
 

@@ -5,7 +5,7 @@ class WinCombinationsService
   end
 
   def call
-    rows_combinations = (1..max_rows * max_columns).each_slice(max_columns).to_a
+    rows_combinations = (0...max_rows * max_columns).each_slice(max_columns).to_a
     columns_combinations = rows_combinations.transpose
 
     combinations = rows_combinations + columns_combinations

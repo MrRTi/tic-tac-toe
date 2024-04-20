@@ -5,7 +5,7 @@ module Games
 
       if win?(game)
         game.finish!
-      elsif game_draw?(game)
+      elsif draw?(game)
         game.draw!
       end
 
@@ -32,7 +32,7 @@ module Games
       BoardCheckService.new(board, **board_params).win?(current_symbol)
     end
 
-    def game_draw?(game)
+    def draw?(game)
       game.moves.count >= game.board_size
     end
   end

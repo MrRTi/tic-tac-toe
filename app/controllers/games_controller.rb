@@ -30,6 +30,6 @@ class GamesController < ApplicationController
   end
 
   def win_combination(board, board_params, last_move_symbol)
-    BoardCheckService.new(board, **board_params).win_combination(last_move_symbol) || []
+    BoardCheckService.new(board, **board_params).win_combination(last_move_symbol)
   end
 end

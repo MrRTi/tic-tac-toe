@@ -1,6 +1,9 @@
 <div class="board" >
   <% board.map.with_index do |cell,idx| %>
-    <% cell_class = cell == winner_symbol ? "cell winner" : "cell" %>
+    <% cell_class = "cell" %>
+    <% cell_class += " empty" unless cell.present? %>
+    <% cell_class += " winner" if cell == winner_symbol %>
+
     <div id="<%= "cell-#{idx}" %>" class="<%= cell_class %>">
       <% if cell.present? %>
         <%= render partial: "cell", locals: { cell: } %>

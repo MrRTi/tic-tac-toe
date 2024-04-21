@@ -48,13 +48,15 @@ group :development, :test do
   gem "byebug", "~> 11.1"
   gem "debug", platforms: [:mri, :windows]
   gem "factory_bot", "~> 6.4"
+  gem "rspec-rails"
 
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
 
-  gem "rspec-rails"
+  gem "bundler-audit", "~> 0.9.1"
+  gem "brakeman", "~> 6.1"
 end
 
 group :development do

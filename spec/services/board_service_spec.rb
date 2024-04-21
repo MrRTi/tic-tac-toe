@@ -1,6 +1,6 @@
 RSpec.describe BoardService do
   describe "#call" do
-    subject(:board) { described_class.new(moves, max_rows: Game::MAX_ROWS, max_columns: Game::MAX_COLUMNS) }
+    subject(:board) { described_class.new(moves) }
 
     let(:game) { create(:game) }
     let(:moves) do

@@ -1,9 +1,6 @@
 RSpec.describe BoardCheckService do
   describe "#win_combination" do
-    subject(:check) { described_class.new(board, max_rows:, max_columns:).win_combination(Move::O_SYMBOL) }
-
-    let(:max_rows) { Game::MAX_ROWS }
-    let(:max_columns) { Game::MAX_COLUMNS }
+    subject(:check) { described_class.new(board).win_combination(Move::O_SYMBOL) }
 
     row_boards = [
       [[Move::O_SYMBOL, Move::O_SYMBOL, Move::O_SYMBOL,
@@ -97,10 +94,7 @@ RSpec.describe BoardCheckService do
   end
 
   describe "#win?" do
-    subject(:check) { described_class.new(board, max_rows:, max_columns:).win?(Move::O_SYMBOL) }
-
-    let(:max_rows) { Game::MAX_ROWS }
-    let(:max_columns) { Game::MAX_COLUMNS }
+    subject(:check) { described_class.new(board).win?(Move::O_SYMBOL) }
 
     row_boards = [
       [Move::O_SYMBOL, Move::O_SYMBOL, Move::O_SYMBOL,

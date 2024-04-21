@@ -24,12 +24,11 @@ module Games
 
     def win?(game)
       moves = game.moves
-      board_params = { max_rows: game.max_rows, max_columns: game.max_columns }
-      board = BoardService.new(moves, **board_params).call
+      board = BoardService.new(moves).call
       return false if board.blank?
 
       current_symbol = moves.last.symbol
-      BoardCheckService.new(board, **board_params).win?(current_symbol)
+      BoardCheckService.new(board).win?(current_symbol)
     end
 
     def draw?(game)

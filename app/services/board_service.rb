@@ -1,8 +1,8 @@
 class BoardService
-  def initialize(moves, max_rows:, max_columns:)
+  def initialize(moves)
     @moves = moves
-    @max_rows = max_rows
-    @max_columns = max_columns
+    @max_rows = Game::MAX_ROWS
+    @max_columns = Game::MAX_COLUMNS
   end
 
   def call

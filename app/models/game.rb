@@ -1,8 +1,7 @@
 class Game < ApplicationRecord
   include AASM
 
-  MAX_ROWS = 3
-  MAX_COLUMNS = 3
+  MAX_ROWS = MAX_COLUMNS = 3
 
   has_many :moves, dependent: :destroy
 

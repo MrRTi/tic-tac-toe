@@ -1,8 +1,7 @@
 class BoardCheckService
-  def initialize(board, max_rows:, max_columns:)
+  def initialize(board)
     @board = board
-    board_params = { max_rows:, max_columns: }
-    @win_combinations = WinCombinationsService.new(**board_params).call
+    @win_combinations = WinCombinationsService.new.call
   end
 
   def win?(current_symbol)

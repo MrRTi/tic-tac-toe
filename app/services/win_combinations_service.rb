@@ -1,7 +1,7 @@
 class WinCombinationsService
-  def initialize(max_rows: Game::MAX_ROWS, max_columns: Game::MAX_COLUMNS)
-    @max_rows = max_rows
-    @max_columns = max_columns
+  def initialize
+    @max_rows = Game::MAX_ROWS
+    @max_columns = Game::MAX_COLUMNS
   end
 
   def call

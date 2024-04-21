@@ -5,9 +5,9 @@ RSpec.describe BoardService do
     let(:game) { create(:game) }
     let(:moves) do
       [
-        build(:move, game:, row: 1, column: 1, symbol: Move::O_SYMBOL),
-        build(:move, game:, row: 2, column: 3, symbol: Move::X_SYMBOL),
-        build(:move, game:, row: 3, column: 2, symbol: Move::O_SYMBOL)
+        build(:move, game:, row: 0, column: 0, symbol: Move::O_SYMBOL),
+        build(:move, game:, row: 1, column: 2, symbol: Move::X_SYMBOL),
+        build(:move, game:, row: 2, column: 1, symbol: Move::O_SYMBOL)
       ]
     end
 

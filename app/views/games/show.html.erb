@@ -2,7 +2,7 @@
   <%= t("game.title", number: @game.id) %>
 </h1>
 
-<%= link_to t("game.return_back"), root_path, class: "mdc-button" %>
+<%= link_to t("game.return_back"), root_path, class: "mdc-button mdc-button--outlined" %>
 
 <h2 class="game-status">
   <% if @game.finished? %>

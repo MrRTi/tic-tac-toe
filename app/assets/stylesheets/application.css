@@ -51,6 +51,10 @@ h1.game {
   margin: 2rem 0;
 }
 
+h2.game-status {
+  margin-bottom: 0;
+}
+
 table {
   width: 100%;
 }
@@ -62,6 +66,7 @@ td>.mdc-button {
 
 th,
 td,
+.game-status,
 .mdc-data-table__cell {
   text-transform: capitalize;
 }

@@ -4,6 +4,14 @@
 
 <%= link_to t("game.return_back"), root_path, class: "mdc-button" %>
 
+<h2 class="game-status">
+  <% if @game.finished? %>
+    <%= "#{@game.moves.last.symbol.upcase} won" %>
+  <% elsif @game.draw? %>
+    <%= t "game.state.#{@game.state}" %>
+  <% end %>
+</h2>
+
 <%= render partial: "board",
   locals: { board: @board, game: @game, win_combination: @win_combination, next_symbol: @next_symbol }
 %>

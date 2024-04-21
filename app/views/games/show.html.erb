@@ -1,8 +1,11 @@
-<h1>Game #<%= @game.id%></h1>
-<%= link_to "Back", root_path %>
+<h1 class="mdc-typography--headline1">
+  Game #<%= @game.id%>
+</h1>
 
 <div class="content">
   <%= render partial: "board",
-    locals: { board: @board, game: @game, win_combination: @win_combination, next_symbol: @next_symbol } 
+    locals: { board: @board, game: @game, win_combination: @win_combination, next_symbol: @next_symbol }
   %>
 </div>
+
+<%= link_to "Return back", root_path, class: "mdc-button" %>

@@ -1,6 +1,6 @@
 <div class="board" >
   <% board.map.with_index do |cell,idx| %>
-    <% cell_class = "cell" %>
+    <% cell_class = "mdc-elevation--z4 cell" %>
     <% cell_class += " empty" unless cell.present? %>
 
     <div id="<%= "cell-#{idx}" %>" class="<%= cell_class %>">

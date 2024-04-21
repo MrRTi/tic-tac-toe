@@ -1,6 +1,12 @@
-<h1>Tic Tac Toe</h1>
-<div>
-  <%= button_to "Start new game", action: "create" %>
+<h1 class="mdc-typography--headline1">
+  Tic Tac Toe
+</h1>
+
+<div class="menu">
+  <%= button_to "Start new game",
+    { action: "create" },
+    { class: "mdc-button mdc-button--outlined" }
+  %>
 </div>
-<br />
+
 <%= render partial: "games", locals: { games: @games } %>

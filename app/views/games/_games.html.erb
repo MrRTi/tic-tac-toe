@@ -1,13 +1,43 @@
-<div>
+<div class="games-list">
   <% if games.present? %>
-    <h2>Previous games</div>
-    <ui>
-      <% games.map do |game| %>
-        <li>
-          <%= link_to "Game ##{game.id}", game_path(game) %>
-          <%= game.state %>
-        </li>
-      <% end %>
-    </ui>
+    <h2 class="mdc-typography--headline2">
+      Previous games
+    </h2>
+
+    <div class="mdc-data-table">
+      <div class="mdc-data-table__table-container">
+        <table class="mdc-data-table__table" aria-label="Dessert calories">
+          <thead>
+            <tr class="mdc-data-table__header-row">
+              <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                Game #
+              </th>
+              <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody class="mdc-data-table__content">
+            <% games.map do |game| %>
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">
+                  <%= link_to "Game ##{game.id}", game_path(game) %>
+                </th>
+                <td class="mdc-data-table__cell">
+                  <span class="game-status">
+                    <% if game.finished? %>
+                      <%= "#{game.moves.last.symbol.upcase} won" %>
+                    <% else %>
+                      <%= t "game.state.#{game.state}" %>
+                    <% end %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
   <% end %>
 </div>

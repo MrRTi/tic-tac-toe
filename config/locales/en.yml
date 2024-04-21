@@ -30,6 +30,7 @@
 en:
   title: Tic Tac Toe
   new_game: Start new game
+  how_to_play: How to play
   prev_games:
     title: Previous games
     headers:

@@ -26,6 +26,8 @@ class GamesController < ApplicationController
   private
 
   def next_symbol(last_move_symbol)
+    return [Move::X_SYMBOL, Move::O_SYMBOL].sample if last_move_symbol.nil?
+
     last_move_symbol == Move::O_SYMBOL ? Move::X_SYMBOL : Move::O_SYMBOL
   end
 

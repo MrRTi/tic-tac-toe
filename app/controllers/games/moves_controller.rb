@@ -1,11 +1,12 @@
 module Games
   class MovesController < Games::ApplicationController
+    NO_WIN_MOVES_COUNT = 4
+
     def create
       game.moves.create!(**move_params)
-      return redirect_to game_path(game) if game.moves.count < 4
+      return redirect_to game_path(game) if game.moves.count < NO_WIN_MOVES_COUNT
 
-      game.finish! if win?(game)
-      game.draw! if game.in_progress? && draw?(game)
+      check_game
 
       redirect_to game_path(game)
     end
@@ -18,6 +19,12 @@ module Games
       params.require(:symbol)
 
       params.permit(:row, :column, :symbol)
+    end
+
+    def check_game
+      return game.finish! if win?(game)
+
+      game.draw! if draw?(game)
     end
 
     def win?(game)

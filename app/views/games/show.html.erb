@@ -1,8 +1,8 @@
 <h1 class="mdc-typography--headline1">
-  Game #<%= @game.id%>
+  <%= t("game.title", number: @game.id) %>
 </h1>
 
-<%= link_to "Return back", root_path, class: "mdc-button" %>
+<%= link_to t("game.return_back"), root_path, class: "mdc-button" %>
 
 <%= render partial: "board",
   locals: { board: @board, game: @game, win_combination: @win_combination, next_symbol: @next_symbol }

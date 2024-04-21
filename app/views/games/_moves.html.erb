@@ -2,17 +2,17 @@
   <% if moves.present? %>
     <div class="mdc-data-table">
       <div class="mdc-data-table__table-container">
-        <table class="mdc-data-table__table" aria-label="Previous moves">
+        <table class="mdc-data-table__table" aria-label=<%= t "game.prev_moves.title"%>>
           <thead>
             <tr class="mdc-data-table__header-row">
               <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
-                Symbol
+                <%= t "game.prev_moves.headers.symbol"%>
               </th>
               <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">
-                Row
+                <%= t "game.prev_moves.headers.row"%>
               </th>
               <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">
-                Column
+                <%= t "game.prev_moves.headers.column"%>
               </th>
             </tr>
           </thead>

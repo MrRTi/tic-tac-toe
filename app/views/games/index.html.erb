@@ -1,9 +1,9 @@
 <h1 class="mdc-typography--headline1">
-  Tic Tac Toe
+  <%= t "title" %>
 </h1>
 
 <div class="menu">
-  <%= button_to "Start new game",
+  <%= button_to  t("start_new_game"),
     { action: "create" },
     { class: "mdc-button mdc-button--outlined" }
   %>

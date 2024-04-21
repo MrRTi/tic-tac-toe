@@ -7,11 +7,11 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    moves = @game.moves
+    @moves = @game.moves
     board_params = { max_rows: @game.max_rows, max_columns: @game.max_columns }
-    @board = BoardService.new(moves, **board_params).call
+    @board = BoardService.new(@moves, **board_params).call
 
-    last_move_symbol = moves.last&.symbol
+    last_move_symbol = @moves.last&.symbol
     @next_symbol = next_symbol(last_move_symbol)
 
     @win_combination = []

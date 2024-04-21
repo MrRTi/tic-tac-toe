@@ -39,10 +39,6 @@ body {
   }
 }
 
-.content {
-  margin-bottom: 2rem;
-}
-
 table {
   width: 100%;
 }
@@ -59,6 +55,8 @@ table {
 
 .board {
   width: 25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 768px) {

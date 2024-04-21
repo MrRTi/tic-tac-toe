@@ -2,12 +2,10 @@ module Games
   class MovesController < Games::ApplicationController
     def create
       game.moves.create!(**move_params)
+      return redirect_to game_path(game) if game.moves.count < 4
 
-      if win?(game)
-        game.finish!
-      elsif draw?(game)
-        game.draw!
-      end
+      game.finish! if win?(game)
+      game.draw! if game.in_progress? && draw?(game)
 
       redirect_to game_path(game)
     end
@@ -27,8 +25,7 @@ module Games
       board = BoardService.new(moves).call
       return false if board.blank?
 
-      current_symbol = moves.last.symbol
-      BoardCheckService.new(board).win?(current_symbol)
+      BoardCheckService.new(board).win?(move_params[:symbol])
     end
 
     def draw?(game)

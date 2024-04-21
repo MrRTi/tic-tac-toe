@@ -21,7 +21,7 @@
             <% games.map do |game| %>
               <tr class="mdc-data-table__row">
                 <th class="mdc-data-table__cell" scope="row">
-                  <%= link_to "Game ##{game.id}", game_path(game) %>
+                  <%= link_to "Game ##{game.id}", game_path(game), class: "mdc-button" %>
                 </th>
                 <td class="mdc-data-table__cell">
                   <span class="game-status">

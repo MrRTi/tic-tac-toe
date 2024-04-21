@@ -31,12 +31,17 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   width: 30em;
+  background-color: #eff1f5;
 }
 
 @media only screen and (max-width: 768px) {
   body {
     width: 90%;
   }
+}
+
+h1.game {
+  margin: 2rem 0;
 }
 
 table {
@@ -46,6 +51,12 @@ table {
 th>.mdc-button,
 td>.mdc-button {
   padding: 0;
+}
+
+th,
+td,
+.mdc-data-table__cell {
+  text-transform: capitalize;
 }
 
 .board,
@@ -79,7 +90,7 @@ td>.mdc-button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
+  background-color: #ccd0da;
 }
 
 .symbol,
@@ -90,16 +101,16 @@ td>.mdc-button {
 }
 
 .symbol.o-symbol {
-  color: darkred;
+  color: #df8e1d;
 }
 
 .symbol.x-symbol {
-  color: darkcyan;
+  color: #7287fd;
 }
 
 .symbol.o-symbol.highlight,
 .symbol.x-symbol.highlight {
-  color: red;
+  color: #d20f39;
 }
 
 .form {
@@ -115,26 +126,22 @@ td>.mdc-button {
   -webkit-appearance: none;
   padding: 0;
   border: 1px solid transparent;
-  transition: opacity .5s ease-out;
-  -moz-transition: opacity .5s ease-out;
-  -webkit-transition: opacity .5s ease-out;
-  -o-transition: opacity .5s ease-out;
+  transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  background-color: #ccd0da;
 }
 
 @media (hover: hover) {
+
   .button:hover,
   .button:active {
-    color: black;
+    color: #4c4f69;
     opacity: 1;
   }
 }
 
 .button:disabled {
   display: none;
-}
-
-th,
-td,
-.mdc-data-table__cell {
-  text-transform: capitalize;
 }

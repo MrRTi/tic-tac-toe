@@ -28,4 +28,25 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  title: Tic Tac Toe
+  new_game: Start new game
+  how_to_play: How to play
+  prev_games:
+    title: Previous games
+    headers:
+      game_number: "Game #"
+      status: Status
+
+  game:
+    prev_moves:
+      title: Previous moves
+      headers:
+        symbol: Symbol
+        row: Row
+        column: Column
+    title: "Game #%{number}"
+    return_back: Return back
+    state:
+      finished: finished
+      draw: draw
+      in_progress: in progress

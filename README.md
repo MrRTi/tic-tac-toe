@@ -1,24 +1,39 @@
-# README
+# Tic Tac Toe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+Requirements `docker`
 
-* Ruby version
+```bash
+cp .env.template .env
+```
 
-* System dependencies
+Set postgresql password in .env
 
-* Configuration
+Build image with
 
-* Database creation
+```bash
+docker compose build
+```
 
-* Database initialization
+Create database
 
-* How to run the test suite
+```bash
+docker compose run --rm app bash -c "bundle exec rails db:setup"
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run
 
-* Deployment instructions
+Run application
+```bash
+docker compose up
+```
 
-* ...
+Open [http://localhost:3000](http://localhost:3000) in browser
+
+
+## Test
+
+```bash
+docker compose run --rm app bash -c "RAILS_ENV=test bundle exec rspec"
+```

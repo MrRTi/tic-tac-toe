@@ -1,0 +1,49 @@
+version: "3.7"
+name: "tic-tac-toe"
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/rails
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    command: bundle exec rails server -p 3000 -b '0.0.0.0'
+    environment:
+      - RAILS_PORT=3000
+      - RAILS_ENV=development
+      - RAILS_WEB_CONCURRENCY=2
+      - RAILS_MAX_THREADS=5
+      - RAILS_MIN_THREADS=5
+      - LOG_LEVEL=debug
+      - DATABASE_NAME=${POSTGRES_DB}
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=${POSTGRES_USER}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+    stdin_open: true
+    tty: true
+    networks:
+      - default
+
+  db:
+    image: postgres:15.2-alpine3.17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes: 
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - default
+
+
+volumes:
+  postgres-data:
+

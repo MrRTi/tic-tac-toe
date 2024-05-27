@@ -1,0 +1,16 @@
+<h1 class="mdc-typography--headline1">
+  <%= t "title" %>
+</h1>
+
+<div class="menu">
+  <%= button_to  t("start_new_game"),
+    { action: "create" },
+    { class: "mdc-button mdc-button--outlined" }
+  %>
+  <%= link_to t("how_to_play"),
+    "https://en.wikipedia.org/wiki/Tic-tac-toe#Gameplay",
+    { class: "mdc-button mdc-button--outlined",  target: "_blank" }
+  %>
+</div>
+
+<%= render partial: "games", locals: { games: @games } %>
